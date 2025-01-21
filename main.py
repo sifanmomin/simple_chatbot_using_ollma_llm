@@ -2,9 +2,10 @@ from langchain.prompts import PromptTemplate
 from langchain_community.llms import Ollama  # Correct import for Ollama
 import streamlit as st
 
-# Define the prompt template (using PromptTemplate instead of ChatPromptTemplate)
-prompt = PromptTemplate.from_template(
-    "You are a helpful assistant. Please respond to the user's question: {question}"
+# Define the prompt template correctly
+prompt = PromptTemplate(
+    input_variables=["question"],
+    template="You are a helpful assistant. Please respond to the user's question: {question}"
 )
 
 # Streamlit framework
